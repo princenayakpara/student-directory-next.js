@@ -1,8 +1,7 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArrowLeft } from "lucide-react";
-import { departments, specializations, students, getDepartment, getSpecialization } from "@/data/students";
-import StudentCard from "@/components/StudentCard";
+import { specializations, students, getDepartment, getSpecialization } from "@/data/students";
 export function generateStaticParams() { return specializations.map(s => ({ department: s.departmentSlug, specialization: s.slug })); }
 export default async function SpecializationPage({ params }: { params: Promise<{ department: string; specialization: string }> }) {
  const { department: deptSlug, specialization: specSlug } = await params; const dept = getDepartment(deptSlug); const spec = getSpecialization(deptSlug, specSlug); if (!dept || !spec) notFound();

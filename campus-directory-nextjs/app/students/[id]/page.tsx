@@ -1,8 +1,12 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArrowLeft } from "lucide-react";
-import { getStudent, yearLabel } from "@/data/students";
-export function generateStaticParams() { const { students } = require("@/data/students"); return students.map((student: { id: string }) => ({ id: student.id })); }
+import { getStudent, yearLabel, students } from "@/data/students";
+export function generateStaticParams() {
+  return students.map((student) => ({
+    id: student.id,
+  }));
+}
 export default async function StudentProfile({ params }: { params: Promise<{ id: string }> }) {
   const { id } = await params; const student = getStudent(id); if (!student) notFound();
   return <section className="profile-content"><div className="breadcrumbs"><Link href="/students">Students</Link><span>/</span><strong>{student.name}</strong></div><Link href="/students" className="back-link"><ArrowLeft size={16}/> Back to students</Link><article className="profile-card"><div className="profile-title"><div className={`avatar avatar-large ${student.color}`}>{student.initials}</div><div><h1>{student.name}</h1><div className="profile-badges"><span className="id-badge">{student.id}</span><span className="status-badge">Active Student</span></div></div></div><div className="profile-facts"><div><span className="eyebrow">Department</span><strong>{student.department}</strong></div><div><span className="eyebrow">Study year</span><strong>{yearLabel(student.year)}</strong></div><div><span className="eyebrow">Email</span><a href={`mailto:${student.email}`}>{student.email}</a></div><div><span className="eyebrow">Enrolled</span><strong>{student.enrolled}</strong></div></div><section className="profile-section"><h2>About</h2><p>{student.about}</p></section><section className="profile-section academic"><h2>Academic Details</h2><div className="detail-row"><span>Department</span><strong>{student.department}</strong></div><div className="detail-row"><span>Current Academic Standing</span><strong>{yearLabel(student.year).replace(/ \\(.+\\)/, "")} Undergraduate</strong></div><span className="eyebrow subjects-label">Enrolled subjects</span><div className="subjects-list">{student.subjects.map(subject => <div className="subject-row" key={subject.code}><span><strong>{subject.code}:</strong> {subject.title}</span><small>{subject.credits} Credits</small></div>)}</div></section></article><div className="record-footer"><span>System Record ID: 0948-{student.departmentSlug.slice(0,2).toUpperCase()}-{student.initials}</span><span>Last validated: Oct 24, 2024</span></div></section>;
