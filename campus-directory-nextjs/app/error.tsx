@@ -1,0 +1,2 @@
+"use client";
+export default function ErrorPage({ reset }: { error: Error & { digest?: string }; reset: () => void }) { return <section className="error-panel"><span className="error-code">APPLICATION ERROR</span><h1>Something went wrong</h1><p>We couldn’t load this directory page. Please try again.</p><button className="primary-button" onClick={() => reset()}>Try again</button></section>; }
