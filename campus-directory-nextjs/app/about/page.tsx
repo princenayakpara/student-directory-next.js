@@ -1,0 +1,4 @@
+import Link from "next/link";
+export default function AboutPage() { 
+  return 
+  <section className="narrow-content about-page"><span className="eyebrow">ABOUT THE PROJECT</span><h1>Campus Directory</h1><p className="lead">A simple, accessible directory for exploring students, academic departments, and specializations.</p><div className="about-panel"><h2>Built for frontend practice</h2><p>This project demonstrates Next.js App Router conventions, dynamic routes, shared layouts, reusable components, typed local data, filtering, and not-found handling.</p><p>All student and enrollment information is fictional sample data. No backend or database is required.</p><Link className="primary-button" href="/students">Browse students</Link></div></section>; }
