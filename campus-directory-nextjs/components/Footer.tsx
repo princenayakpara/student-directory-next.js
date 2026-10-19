@@ -1,0 +1,1 @@
+export default function Footer() { return <footer className="site-footer"><div><span>Campus Directory © Academic Informatics Core</span><span className="footer-path">Built with Next.js App Router <i /></span></div></footer>; }
