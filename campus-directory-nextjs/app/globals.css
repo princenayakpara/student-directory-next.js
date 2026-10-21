@@ -1,5 +1,4 @@
-
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap");
 
 :root {
   --background: #f6f5f1;
@@ -38,7 +37,7 @@ body {
     ),
     var(--background);
   color: var(--foreground);
-  font-family: 'DM Sans', sans-serif;
+  font-family: "DM Sans", sans-serif;
   font-size: 15px;
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
@@ -48,7 +47,7 @@ h1,
 h2,
 h3,
 h4 {
-  font-family: 'Manrope', sans-serif;
+  font-family: "Manrope", sans-serif;
   color: var(--foreground);
 }
 
@@ -104,7 +103,7 @@ select:focus-visible {
   align-items: center;
   gap: 11px;
   white-space: nowrap;
-  font-family: 'Manrope', sans-serif;
+  font-family: "Manrope", sans-serif;
   font-size: 19px;
   font-weight: 800;
   letter-spacing: -0.7px;
@@ -134,7 +133,9 @@ nav {
   color: var(--muted);
   font-size: 14px;
   font-weight: 600;
-  transition: color 180ms ease, border-color 180ms ease;
+  transition:
+    color 180ms ease,
+    border-color 180ms ease;
 }
 
 .nav-link:hover,
@@ -238,7 +239,9 @@ nav {
   border-radius: var(--radius-sm);
   background: white;
   color: var(--muted);
-  transition: border-color 180ms ease, box-shadow 180ms ease;
+  transition:
+    border-color 180ms ease,
+    box-shadow 180ms ease;
 }
 
 .search-field:focus-within {
@@ -413,8 +416,6 @@ nav {
   color: #7b8294;
 }
 
-
-
 /* =========================================
    PREMIUM CAMPUS DIRECTORY — PART 2
    Profiles, departments and specializations
@@ -484,7 +485,7 @@ nav {
 
 .profile-title h1 {
   margin: 0 0 7px;
-  font-family: 'Manrope', sans-serif;
+  font-family: "Manrope", sans-serif;
   font-size: 35px;
   font-weight: 800;
   letter-spacing: -1.25px;
@@ -558,7 +559,7 @@ nav {
 
 .profile-section h2 {
   margin: 0 0 12px;
-  font-family: 'Manrope', sans-serif;
+  font-family: "Manrope", sans-serif;
   font-size: 17px;
   font-weight: 800;
   letter-spacing: -0.4px;
@@ -712,7 +713,7 @@ nav {
 
 .department-title h2 {
   margin: 0;
-  font-family: 'Manrope', sans-serif;
+  font-family: "Manrope", sans-serif;
   font-size: 20px;
   font-weight: 800;
   letter-spacing: -0.65px;
@@ -836,7 +837,7 @@ nav {
 
 .section-heading h2 {
   margin: 0;
-  font-family: 'Manrope', sans-serif;
+  font-family: "Manrope", sans-serif;
   font-size: 18px;
   font-weight: 800;
   letter-spacing: -0.55px;
@@ -953,7 +954,7 @@ nav {
 
 .spec-title h1 {
   margin: 0;
-  font-family: 'Manrope', sans-serif;
+  font-family: "Manrope", sans-serif;
   font-size: clamp(28px, 3vw, 37px);
   font-weight: 800;
   letter-spacing: -1.25px;
@@ -1027,7 +1028,9 @@ nav {
   border: 1px solid var(--border);
   border-radius: 8px;
   background: var(--surface);
-  transition: border-color 180ms ease, box-shadow 180ms ease;
+  transition:
+    border-color 180ms ease,
+    box-shadow 180ms ease;
 }
 
 .track-student-card:hover {
@@ -1131,7 +1134,9 @@ nav {
   font-size: 13px;
   font-weight: 700;
   cursor: pointer;
-  transition: transform 150ms ease, background 150ms ease;
+  transition:
+    transform 150ms ease,
+    background 150ms ease;
 }
 
 .primary-button {
@@ -1153,8 +1158,6 @@ nav {
 .secondary-button:hover {
   background: var(--surface-soft);
 }
-
-
 
 /* =========================================
    PREMIUM CAMPUS DIRECTORY — PART 3
@@ -1201,7 +1204,7 @@ nav {
 .not-found-center h1,
 .error-panel h1 {
   margin: 24px 0 12px;
-  font-family: 'Manrope', sans-serif;
+  font-family: "Manrope", sans-serif;
   font-size: clamp(30px, 4vw, 42px);
   font-weight: 800;
   letter-spacing: -1.5px;
@@ -1297,12 +1300,7 @@ nav {
 
 .skeleton {
   border-radius: var(--radius-md);
-  background: linear-gradient(
-    90deg,
-    #e9e9e5 25%,
-    #f5f4f0 50%,
-    #e9e9e5 75%
-  );
+  background: linear-gradient(90deg, #e9e9e5 25%, #f5f4f0 50%, #e9e9e5 75%);
   background-size: 200% 100%;
   animation: premium-shimmer 1.5s ease-in-out infinite;
 }

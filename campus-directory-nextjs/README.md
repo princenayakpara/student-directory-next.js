@@ -3,6 +3,7 @@
 A responsive student and academic department directory built with **Next.js App Router**, **React**, and **TypeScript**. Uses local fictional sample data; no backend or database is required.
 
 ## Features
+
 - Student directory with live search by name or student ID
 - Department filter and responsive student cards
 - Dynamic student profiles at `/students/[id]`
@@ -14,35 +15,41 @@ A responsive student and academic department directory built with **Next.js App 
 - Responsive layout and keyboard-accessible form controls
 
 ## Requirements
+
 - Node.js 20.9 or later
 - npm
 
 ## Run locally
+
 ```bash
 npm install
 npm run dev
 ```
+
 Open [http://localhost:3000](http://localhost:3000).
 
 ## Production build
+
 ```bash
 npm run build
 npm start
 ```
 
 ## Main routes
-| Route | Purpose |
-|---|---|
-| `/` | Redirects to `/students` |
-| `/students` | Search and filter student directory |
-| `/students/STU-1042` | Example student profile |
-| `/departments` | Department listing |
-| `/departments/computer-science` | Department overview and tracks |
+
+| Route                                           | Purpose                                     |
+| ----------------------------------------------- | ------------------------------------------- |
+| `/`                                             | Redirects to `/students`                    |
+| `/students`                                     | Search and filter student directory         |
+| `/students/STU-1042`                            | Example student profile                     |
+| `/departments`                                  | Department listing                          |
+| `/departments/computer-science`                 | Department overview and tracks              |
 | `/departments/computer-science/web-development` | Nested specialization and enrolled students |
-| `/about` | Project information |
-| Invalid IDs/slugs | Custom not-found page |
+| `/about`                                        | Project information                         |
+| Invalid IDs/slugs                               | Custom not-found page                       |
 
 ## Folder structure
+
 ```text
 app/                  App Router pages, layouts and error states
 components/            Shared navigation and student UI components
@@ -51,10 +58,13 @@ types/index.ts         TypeScript data types
 ```
 
 ## Data note
+
 Names, emails, student IDs, course names, enrollment counts, and staff names are fictional examples for frontend practice.
 
 ## GitHub submission
+
 Create a new empty GitHub repository, then run from this project folder:
+
 ```bash
 git init
 git add .
@@ -64,4 +74,5 @@ git remote add origin https://github.com/YOUR_USERNAME/YOUR_REPOSITORY.git
 git push -u origin main
 git rev-parse HEAD
 ```
+
 Copy the repository URL and the full hash printed by `git rev-parse HEAD` into the assignment form. Replace the example remote URL with your own repository URL.

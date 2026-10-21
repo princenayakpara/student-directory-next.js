@@ -3,5 +3,69 @@ import { Code2, Palette, TrendingUp, Users, Shapes } from "lucide-react";
 import { departments, specializations } from "@/data/students";
 const icons = { code: Code2, design: Palette, business: TrendingUp };
 export default function DepartmentsPage() {
- return <section className="departments-content"><div className="departments-heading"><div><h1>Departments</h1><p>Explore academic faculties, programs, and enrolled students.</p></div><span className="active-faculties"><i/> 3 Active Academic Faculties</span></div><div className="department-list">{departments.map(department => { const Icon = icons[department.icon]; return <article className="department-row" key={department.slug}><div className="department-main"><div className="department-title"><span className="icon-tile"><Icon size={23}/></span><h2>{department.name}</h2></div><p>{department.description}</p><div className="department-stats"><span><Shapes size={17}/>{department.specializations} Specializations</span><b>·</b><span><Users size={18}/>{department.enrolled} Enrolled Students</span></div></div><Link className="department-link" href={`/departments/${department.slug}`}>View students <span>→</span></Link></article>})}</div><div className="curriculum-footer"><span>Curriculum Year 2024–2025</span><span>Updated daily via Campus Records API</span></div><section className="specialization-shortcuts"><h2>Explore specializations</h2><div>{specializations.map(spec => <Link key={spec.slug} href={`/departments/${spec.departmentSlug}/${spec.slug}`}>{spec.name} <span>→</span></Link>)}</div></section></section>;
+  return (
+    <section className="departments-content">
+      <div className="departments-heading">
+        <div>
+          <h1>Departments</h1>
+          <p>Explore academic faculties, programs, and enrolled students.</p>
+        </div>
+        <span className="active-faculties">
+          <i /> 3 Active Academic Faculties
+        </span>
+      </div>
+      <div className="department-list">
+        {departments.map((department) => {
+          const Icon = icons[department.icon];
+          return (
+            <article className="department-row" key={department.slug}>
+              <div className="department-main">
+                <div className="department-title">
+                  <span className="icon-tile">
+                    <Icon size={23} />
+                  </span>
+                  <h2>{department.name}</h2>
+                </div>
+                <p>{department.description}</p>
+                <div className="department-stats">
+                  <span>
+                    <Shapes size={17} />
+                    {department.specializations} Specializations
+                  </span>
+                  <b>·</b>
+                  <span>
+                    <Users size={18} />
+                    {department.enrolled} Enrolled Students
+                  </span>
+                </div>
+              </div>
+              <Link
+                className="department-link"
+                href={`/departments/${department.slug}`}
+              >
+                View students <span>→</span>
+              </Link>
+            </article>
+          );
+        })}
+      </div>
+      <div className="curriculum-footer">
+        <span>Curriculum Year 2024–2025</span>
+        <span>Updated daily via Campus Records API</span>
+      </div>
+      <section className="specialization-shortcuts">
+        <h2>Explore specializations</h2>
+        <div>
+          {specializations.map((spec) => (
+            <Link
+              key={spec.slug}
+              href={`/departments/${spec.departmentSlug}/${spec.slug}`}
+            >
+              {spec.name} <span>→</span>
+            </Link>
+          ))}
+        </div>
+      </section>
+    </section>
+  );
 }
